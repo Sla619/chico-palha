@@ -1,0 +1,17 @@
+{
+    "name": "chico-palha",
+    "version": "1.0.0",
+    "description": "Extensão do Chico Palha para micro:bit",
+    "license": "MIT",
+    "dependencies": {
+      "core": "*"
+    },
+    "files": [
+      "chico.ts"
+    ],
+    "public": true,
+    "preferredEditor": "tsprj",
+    "supportedTargets": [
+      "microbit"
+    ]
+  }
