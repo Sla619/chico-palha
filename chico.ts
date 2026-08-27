@@ -9,10 +9,8 @@ namespace chicoPalha {
     // 🌾 PERSONAGEM
     // =========================
 
-    /**
-     * Mostra Chico Palha.
-     */
     //% block="mostrar Chico Palha"
+    //% group="Personagem"
     export function mostrarChicoPalha() {
         basic.showLeds(`
             . # # # .
@@ -23,18 +21,14 @@ namespace chicoPalha {
         `)
     }
 
-    /**
-     * Chico Palha sorri.
-     */
     //% block="Chico Palha sorrir"
+    //% group="Personagem"
     export function sorrir() {
         basic.showIcon(IconNames.Happy)
     }
 
-    /**
-     * Chico Palha fica confuso.
-     */
     //% block="Chico Palha ficar confuso"
+    //% group="Personagem"
     export function confuso() {
         basic.showLeds(`
             . # . # .
@@ -45,31 +39,38 @@ namespace chicoPalha {
         `)
     }
 
-    /**
-     * Mostra o visual do Chico Palha.
-     */
     //% block="mostrar visual do Chico Palha"
+    //% group="Personagem"
     export function mostrarVisual() {
         mostrarChicoPalha()
     }
 
+    //% block="Chico Palha pensar $texto"
+    //% texto.shadow=text
+    //% group="Personagem"
+    export function pensar(texto: string) {
+        basic.showString(texto)
+    }
+
+    //% block="Chico Palha quer dançar"
+    //% group="Personagem"
+    export function querDancar() {
+        basic.showString("QUERO DANCAR!")
+    }
+
 
     // =========================
-    // 🌽 FAZENDA E MILHARAL
+    // 🌽 FAZENDA
     // =========================
 
-    /**
-     * Chico Palha vai para a fazenda.
-     */
     //% block="Chico Palha vai para a fazenda"
+    //% group="Fazenda"
     export function irParaFazenda() {
         basic.showString("FAZENDA")
     }
 
-    /**
-     * Mostra um milho.
-     */
     //% block="mostrar milho"
+    //% group="Fazenda"
     export function mostrarMilho() {
         basic.showLeds(`
             . . # . .
@@ -80,10 +81,8 @@ namespace chicoPalha {
         `)
     }
 
-    /**
-     * Mostra o céu estrelado.
-     */
     //% block="mostrar céu estrelado"
+    //% group="Fazenda"
     export function ceuEstrelado() {
         for (let i = 0; i < 3; i++) {
             basic.showLeds(`
@@ -113,19 +112,15 @@ namespace chicoPalha {
     // 🎪 ARRAIÁ
     // =========================
 
-    /**
-     * Inicia o Arraiá da Milharal.
-     */
     //% block="iniciar Arraiá da Milharal"
+    //% group="Arraiá"
     export function iniciarArraia() {
         basic.showString("ARRAIA!")
         basic.showIcon(IconNames.Heart)
     }
 
-    /**
-     * Toca uma música simples do arraial.
-     */
     //% block="tocar música do arraial"
+    //% group="Arraiá"
     export function musicaArraial() {
         music.playTone(262, music.beat(BeatFraction.Quarter))
         music.playTone(330, music.beat(BeatFraction.Quarter))
@@ -133,19 +128,15 @@ namespace chicoPalha {
         music.playTone(523, music.beat(BeatFraction.Half))
     }
 
-    /**
-     * Começa a dança final.
-     */
     //% block="começar dança final"
+    //% group="Arraiá"
     export function dancaFinal() {
         basic.showString("VAI!")
         dancar()
     }
 
-    /**
-     * Comemora no Arraiá.
-     */
     //% block="comemorar no Arraiá"
+    //% group="Arraiá"
     export function comemorarArraia() {
         for (let i = 0; i < 3; i++) {
             basic.showIcon(IconNames.Happy)
@@ -158,80 +149,25 @@ namespace chicoPalha {
 
 
     // =========================
-    // 💭 PENSAMENTOS
+    // 🕺 DANÇA
     // =========================
 
-    /**
-     * Chico Palha pensa alguma coisa.
-     */
-    //% block="Chico Palha pensar $texto"
-    //% texto.shadow=text
-    export function pensar(texto: string) {
-        basic.showString(texto)
-    }
-
-    /**
-     * Chico Palha quer dançar.
-     */
-    //% block="Chico Palha quer dançar"
-    export function querDancar() {
-        basic.showString("QUERO DANCAR!")
-    }
-
-
-    // =========================
-    // 👩‍🌾 MILHARINA E AMIGOS
-    // =========================
-
-    /**
-     * Milharina chama Chico Palha.
-     */
-    //% block="Milharina chamar Chico Palha"
-    export function milharinaChamar() {
-        basic.showString("CHICO!")
-    }
-
-    /**
-     * Forma pares para a dança.
-     */
-    //% block="formar pares"
-    export function formarPares() {
-        basic.showLeds(`
-            # . . . #
-            . # . # .
-            . . # . .
-            . # . # .
-            # . . . #
-        `)
-    }
-
-    /**
-     * Ensina um passo de dança.
-     */
     //% block="ensinar passo de dança"
+    //% group="Dança"
     export function ensinarPasso() {
         basic.showString("1 2 3")
     }
 
-
-    // =========================
-    // 🕺 DANÇA
-    // =========================
-
-    /**
-     * Aprende um passo de dança.
-     */
     //% block="aprender passo $passo"
     //% passo.shadow=text
+    //% group="Dança"
     export function aprenderPasso(passo: string) {
         basic.showString(passo)
         basic.showIcon(IconNames.Yes)
     }
 
-    /**
-     * Chico Palha dá um giro.
-     */
     //% block="Chico Palha dar giro"
+    //% group="Dança"
     export function darGiro() {
         basic.showArrow(ArrowNames.North)
         basic.pause(200)
@@ -246,30 +182,24 @@ namespace chicoPalha {
         basic.pause(200)
     }
 
-    /**
-     * Chico Palha erra o passo.
-     */
     //% block="Chico Palha errar o passo"
+    //% group="Dança"
     export function errarPasso() {
         basic.showIcon(IconNames.No)
         basic.pause(500)
         basic.showIcon(IconNames.Confused)
     }
 
-    /**
-     * Comemora o aprendizado.
-     */
     //% block="comemorar aprendizado"
+    //% group="Dança"
     export function comemorarAprendizado() {
         basic.showIcon(IconNames.Yes)
         basic.pause(300)
         basic.showIcon(IconNames.Happy)
     }
 
-    /**
-     * Chico Palha dança.
-     */
     //% block="Chico Palha dançar"
+    //% group="Dança"
     export function dancar() {
         for (let i = 0; i < 4; i++) {
 
@@ -295,10 +225,8 @@ namespace chicoPalha {
         }
     }
 
-    /**
-     * Chico Palha mostra seu gingado.
-     */
     //% block="Chico Palha mostrar seu gingado"
+    //% group="Dança"
     export function mostrarGingado() {
         dancar()
         darGiro()
@@ -308,52 +236,65 @@ namespace chicoPalha {
 
 
     // =========================
+    // 👩‍🌾 AMIGOS
+    // =========================
+
+    //% block="Milharina chamar Chico Palha"
+    //% group="Amigos"
+    export function milharinaChamar() {
+        basic.showString("CHICO!")
+    }
+
+    //% block="formar pares"
+    //% group="Amigos"
+    export function formarPares() {
+        basic.showLeds(`
+            # . . . #
+            . # . # .
+            . . # . .
+            . # . # .
+            # . . . #
+        `)
+    }
+
+
+    // =========================
     // 📖 HISTÓRIA
     // =========================
 
-    /**
-     * Cena 1: Chico Palha na fazenda.
-     */
     //% block="história capítulo 1 | Chico Palha na fazenda"
+    //% group="História"
     export function capitulo1() {
         irParaFazenda()
         mostrarChicoPalha()
         sorrir()
     }
 
-    /**
-     * Cena 2: começa o Arraiá.
-     */
     //% block="história capítulo 2 | começa o Arraiá"
+    //% group="História"
     export function capitulo2() {
         iniciarArraia()
         ceuEstrelado()
         musicaArraial()
     }
 
-    /**
-     * Cena 3: Chico quer dançar.
-     */
     //% block="história capítulo 3 | Chico quer dançar"
+    //% group="História"
     export function capitulo3() {
         querDancar()
         confuso()
     }
 
-    /**
-     * Cena 4: Milharina ensina.
-     */
     //% block="história capítulo 4 | Milharina ensina"
+    //% group="História"
     export function capitulo4() {
         milharinaChamar()
         formarPares()
         ensinarPasso()
     }
 
-    /**
-     * Cena 5: Chico aprende.
-     */
     //% block="história capítulo 5 | Chico aprende"
+    //% group="História"
     export function capitulo5() {
         aprenderPasso("PASSO 1")
         aprenderPasso("PASSO 2")
@@ -362,20 +303,16 @@ namespace chicoPalha {
         comemorarAprendizado()
     }
 
-    /**
-     * Cena 6: o grande final.
-     */
     //% block="história capítulo 6 | o grande final"
+    //% group="História"
     export function capitulo6() {
         dancaFinal()
         mostrarGingado()
         comemorarArraia()
     }
 
-    /**
-     * Conta a história completa.
-     */
     //% block="▶ contar história completa do Chico Palha"
+    //% group="História"
     export function historiaCompleta() {
         capitulo1()
         basic.pause(500)
